@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use('/posts', postRouter);
+
+app.get('/', (req, res) => {
+    res.send("Hello to Tuong memories apps")
+})
 const CONNECTION_URL = process.env.CONNECTION_URL;
 // const CONNECTION_URL = 'mongodb+srv://huykiengabc9:huykiengabc9123@cluster0.qe11u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
