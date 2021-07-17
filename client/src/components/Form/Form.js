@@ -7,11 +7,11 @@ import { createPost, updatePost } from '../../actions/posts.js';
 
 
 const Form = ({ currentId, setCurrentId }) => {
-    const classes = useStyles();
     const [postData, setPostData] = useState({
         creator: '', title: '', message: '', tags: '', selectedFile: ''
     });
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null)
+    const classes = useStyles();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,19 +20,25 @@ const Form = ({ currentId, setCurrentId }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (currentId) {
             dispatch(updatePost(currentId, postData))
+
         } else {
             dispatch(createPost(postData));
         }
-        clear()
+
+        clear();
 
     };
     const clear = () => {
-        setCurrentId(null);
+        // console.log("Before " + currentId);
+        setCurrentId("");
+        // console.log("After " + currentId);
         setPostData({
             creator: '', title: '', message: '', tags: '', selectedFile: ''
         })
+
     }
 
 

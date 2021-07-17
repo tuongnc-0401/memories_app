@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core'
 import memories from './images/memories.png'
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import Posts from './components/Posts/Posts.js'
 import Form from './components/Form/Form.js'
@@ -12,15 +12,15 @@ import { getPosts } from './actions/posts.js'
 import useStyles from './styles.js'
 
 const App = () => {
-    const [currentId, setCurrentId] = useState(null)
+    const [currentId, setCurrentId] = useState(null);
     const classes = useStyles();
     const dispatch = useDispatch();
 
 
     useEffect(() => {
         dispatch(getPosts());
-
-    }, [dispatch]);
+        console.log(" App : " + currentId);
+    }, [currentId, dispatch]);
     return (
         <Container maxidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
