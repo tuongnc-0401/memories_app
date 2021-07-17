@@ -1,9 +1,4 @@
-
-const FETCH_ALL = "FETCH_ALL";
-const CREATE = "CREATE";
-const UPDATE = "UPDATE";
-const DELETE = "DELETE";
-const LIKE = "LIKE";
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionType'
 
 export default (posts = [], action) => {
     switch (action.type) {
