@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use('/posts', postRouter);
-app.use('user', userRouter);
+app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
     res.send("Hello to Tuong memories apps")
