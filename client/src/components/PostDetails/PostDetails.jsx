@@ -1,8 +1,12 @@
 import React from "react";
 
-const PostDetails = () => {
-  console.log("Post Details");
-  return <div>POST DETAILs</div>;
+const PostDetail = () => {
+    console.log("Post details");
+    return (
+        <div>
+            <p></p>
+        </div>
+    );
 };
 
-export default PostDetails;
+export default PostDetail;
